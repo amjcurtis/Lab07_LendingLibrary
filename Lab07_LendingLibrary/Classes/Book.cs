@@ -7,9 +7,14 @@ namespace Lab07_LendingLibrary.Classes
     public class Book
     {
         public string Title { get; set; }
-        public string Author { get; set; }
-        public string Genre { get; set; }
+        public Author Author { get; set; }
+        public Genres Genre { get; set; }
 
-
+        public enum Genres
+        {
+            Fiction,
+            History,
+            Programming
+        }
     }
 }
