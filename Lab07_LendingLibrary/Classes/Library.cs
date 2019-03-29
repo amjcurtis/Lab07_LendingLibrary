@@ -33,7 +33,14 @@ namespace Lab07_LendingLibrary.Classes
             }
 
             //TODO Load temp array with items that don't need removed
-            
+            foreach (T item in books)
+            {
+                //if (item title != book title)
+                //{
+                    // Add to temp array
+                //}
+
+            } 
 
             books = temp;
         }

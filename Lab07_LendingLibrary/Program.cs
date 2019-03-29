@@ -7,10 +7,13 @@ namespace Lab07_LendingLibrary
     {
         static void Main(string[] args)
         {
-            // Create custom generic collection
 
         }
 
-
+        // Instantiate custom generic collection
+        Library<string> library = new Library<string>
+        {
+            "C# 7.0 in a Nutshell",
+        }
     }
 }
