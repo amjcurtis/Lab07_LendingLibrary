@@ -8,10 +8,11 @@ namespace Lab07_LendingLibrary
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Phil's Lending Library!");
+            Console.WriteLine("WELCOME TO PHIL'S LENDING LIBRARY!");
             Console.WriteLine("");
 
             Borrow();
+
             Console.WriteLine("");
         }
 
@@ -75,14 +76,43 @@ namespace Lab07_LendingLibrary
                 },
             };
 
+            // Print count of books currently in library
             Console.WriteLine($"Count of books in library: {library.Count()}\n");
 
-            Book bookToAdd = new Book { Title = "My New Book", Author = new Author("Anony", "Mous"), Genre = Book.Genres.History };
+
+            //////////////////////////////////////////////////
+            // Add new book to library
+            //////////////////////////////////////////////////
+
+            Book bookToAdd = new Book { Title = "Cracking the Coding Interview", Author = new Author("Gayle", "Laakmann McDowell"), Genre = Book.Genres.Programming };
             library.Add(bookToAdd);
+            Console.WriteLine("Phil returned a book to the library:\n");
+            Console.WriteLine($"Title: {bookToAdd.Title}");
+            Console.WriteLine($"Author: {bookToAdd.Author.FirstName} {bookToAdd.Author.LastName}");
+            Console.WriteLine($"Genre: {bookToAdd.Genre}\n");
 
             Console.WriteLine($"Count of books in library: {library.Count()}\n");
+
+
+            //////////////////////////////////////////////////
+            // Remove book from library
+            //////////////////////////////////////////////////
 
             //library.Remove(bookToAdd);
+            Console.WriteLine("");
+            Console.WriteLine("Phil checked out this book from the library:");
+            Console.WriteLine($"Title: {bookToAdd.Title}\n");
+
+            Console.WriteLine($"Count of books in library: {library.Count()}\n");
+            Console.WriteLine("");
+
+
+            //////////////////////////////////////////////////
+            // Print all books in library
+            //////////////////////////////////////////////////
+
+            Console.WriteLine("/////////////////////////////////////\n");
+            Console.WriteLine("Here are ALL the books in the library!\n");
 
             foreach (Book book in library)
             {
@@ -111,8 +141,9 @@ namespace Lab07_LendingLibrary
                 }
             }
 
+            Console.WriteLine("");
             Console.WriteLine("/////////////////////////////////////\n");
-            Console.WriteLine($"Here are the books in fictionBooks");
+            Console.WriteLine($"Here are the books in the Fiction Section");
             Console.WriteLine("");
 
             foreach (Book book in fictionBooks)
@@ -123,8 +154,9 @@ namespace Lab07_LendingLibrary
                 Console.WriteLine("");
             }
 
+            Console.WriteLine("");
             Console.WriteLine("/////////////////////////////////////\n");
-            Console.WriteLine($"Here are the books in nonFictionBooks");
+            Console.WriteLine($"Here are the books in the Non-Fiction Section");
             Console.WriteLine("");
 
             foreach (Book book in nonFictionBooks)
