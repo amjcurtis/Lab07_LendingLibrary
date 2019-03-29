@@ -1,4 +1,5 @@
 ﻿using System;
+using Lab07_LendingLibrary.Classes;
 
 namespace Lab07_LendingLibrary
 {
@@ -6,7 +7,10 @@ namespace Lab07_LendingLibrary
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Create custom generic collection
+
         }
+
+
     }
 }
