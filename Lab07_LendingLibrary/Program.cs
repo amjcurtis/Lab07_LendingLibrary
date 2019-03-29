@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Lab07_LendingLibrary.Classes;
 
 namespace Lab07_LendingLibrary
@@ -7,7 +8,11 @@ namespace Lab07_LendingLibrary
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to Phil's Lending Library!");
+            Console.WriteLine("");
+
             Borrow();
+            Console.WriteLine("");
         }
 
         /// <summary>
@@ -70,14 +75,14 @@ namespace Lab07_LendingLibrary
                 },
             };
 
-            Console.WriteLine(library.Count());
+            Console.WriteLine($"Count of books in library: {library.Count()}\n");
 
             Book bookToAdd = new Book { Title = "My New Book", Author = new Author("Anony", "Mous"), Genre = Book.Genres.History };
             library.Add(bookToAdd);
 
-            Console.WriteLine(library.Count());
+            Console.WriteLine($"Count of books in library: {library.Count()}\n");
 
-            library.Remove(bookToAdd);
+            //library.Remove(bookToAdd);
 
             foreach (Book book in library)
             {
@@ -87,6 +92,48 @@ namespace Lab07_LendingLibrary
                 Console.WriteLine("");
             }
 
+
+            //////////////////////////////////////////////////
+            // Distribute books to two different generic lists
+            //////////////////////////////////////////////////
+            List<Book> fictionBooks = new List<Book>();
+            List<Book> nonFictionBooks = new List<Book>();
+
+            foreach (Book book in library)
+            {
+                if (book.Genre == Book.Genres.Fiction)
+                {
+                    fictionBooks.Add(book);
+                }
+                else
+                {
+                    nonFictionBooks.Add(book);
+                }
+            }
+
+            Console.WriteLine("/////////////////////////////////////\n");
+            Console.WriteLine($"Here are the books in fictionBooks");
+            Console.WriteLine("");
+
+            foreach (Book book in fictionBooks)
+            {
+                Console.WriteLine($"Title: {book.Title}");
+                Console.WriteLine($"Author: {book.Author.FirstName} {book.Author.LastName}");
+                Console.WriteLine($"Genre: {book.Genre}");
+                Console.WriteLine("");
+            }
+
+            Console.WriteLine("/////////////////////////////////////\n");
+            Console.WriteLine($"Here are the books in nonFictionBooks");
+            Console.WriteLine("");
+
+            foreach (Book book in nonFictionBooks)
+            {
+                Console.WriteLine($"Title: {book.Title}");
+                Console.WriteLine($"Author: {book.Author.FirstName} {book.Author.LastName}");
+                Console.WriteLine($"Genre: {book.Genre}");
+                Console.WriteLine("");
+            }
 
 
         }
