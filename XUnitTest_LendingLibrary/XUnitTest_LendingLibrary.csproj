@@ -12,4 +12,8 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Lab07_LendingLibrary\Lab07_LendingLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

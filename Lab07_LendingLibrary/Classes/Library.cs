@@ -21,8 +21,8 @@ namespace Lab07_LendingLibrary.Classes
         /// <summary>
         /// Adds a Book object to Library collection
         /// </summary>
-        /// <param name="book">Book object</param>
-        public void Add(T book)
+        /// <param name="bookToAdd">Book object</param>
+        public void Add(T bookToAdd)
         {
             if (count == books.Length)
             {
@@ -30,7 +30,7 @@ namespace Lab07_LendingLibrary.Classes
             }
 
             // Updates books collection at next index
-            books[count++] = book;
+            books[count++] = bookToAdd;
 
             Console.WriteLine($"New book added to library. Number of books in library is now {count}.");
             Console.WriteLine($"Length of books array is now {books.Length}.\n");

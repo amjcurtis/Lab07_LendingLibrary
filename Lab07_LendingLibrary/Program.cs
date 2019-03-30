@@ -15,6 +15,7 @@ namespace Lab07_LendingLibrary
             Console.WriteLine("WELCOME TO PHIL'S LENDING LIBRARY!\n");
 
             Borrow();
+            Console.ReadLine();
         }
 
         /// <summary>
@@ -44,7 +45,7 @@ namespace Lab07_LendingLibrary
             Book bookToAdd8 = new Book { Title = "The Hobbit", Author = new Author("J.R.R", "Tolkien"), Genre = Book.Genres.Fiction };
             Book bookToAdd9 = new Book { Title = "The Book of Lost Tales", Author = new Author("J.R.R", "Tolkien"), Genre = Book.Genres.History };
             Book bookToAdd10 = new Book { Title = "The Adventures of Tom Bombadil", Author = new Author("J.R.R", "Tolkien"), Genre = Book.Genres.Fiction };
-            Book bookToAdd11 = new Book { Title = "Design Patters", Author = new Author("Erich", "Gamma"), Genre = Book.Genres.Programming };
+            Book bookToAdd11 = new Book { Title = "Design Patterns", Author = new Author("Erich", "Gamma"), Genre = Book.Genres.Programming };
             Book bookToAdd12 = new Book { Title = "Cracking the Coding Interview", Author = new Author("Gayle", "Laakmann McDowell"), Genre = Book.Genres.Programming };
             Book bookToAdd13 = new Book { Title = "Team of Teams", Author = new Author("Stanley", "McCrystal"), Genre = Book.Genres.History };
             Book bookToAdd14 = new Book { Title = "The Imposter's Handbook", Author = new Author("Rob", "Conery"), Genre = Book.Genres.Programming };
