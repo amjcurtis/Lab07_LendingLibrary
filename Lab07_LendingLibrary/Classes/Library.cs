@@ -36,7 +36,9 @@ namespace Lab07_LendingLibrary.Classes
         /// <param name="book">Book object</param>
         public void Remove(T book)
         {
-            //T[] temp = null;
+            //TODO Add if stmt so count decrements only if the book to remove actually exists in the library
+
+
             T[] temp = new T[books.Length];
 
             // Determine size of temp array and if it need resizing
@@ -48,10 +50,13 @@ namespace Lab07_LendingLibrary.Classes
             // Load temp array with items that don't need to be removed
             for (int i = 0; i < books.Length; i++)
             {
-                if (!books[i].Equals(book))
+                if ( !(books[i] == null) )
                 {
-                    // Add to temp array
-                    temp[i] = books[i];
+                    if ( !books[i].Equals(book) )
+                    {
+                        // Add to temp array
+                        temp[i] = books[i];
+                    }
                 }
             }
             count--;

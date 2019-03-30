@@ -21,7 +21,7 @@ namespace Lab07_LendingLibrary
         /// </summary>
         public static void Borrow()
         {
-            // Instantiate custom generic collection
+            // Instantiate custom collection
             Library<Book> library = new Library<Book>
             {
                 new Book {
@@ -84,8 +84,26 @@ namespace Lab07_LendingLibrary
             // Add new book to library
             //////////////////////////////////////////////////
 
-            Book bookToAdd = new Book { Title = "Cracking the Coding Interview", Author = new Author("Gayle", "Laakmann McDowell"), Genre = Book.Genres.Programming };
+            Book bookToAdd = new Book { Title = "C# 7.0 in a Nutshell", Author = new Author("Joseph", "Albahari"), Genre = Book.Genres.Programming };
+            Book bookToAdd2 = new Book { Title = "Think Python", Author = new Author("Allen", "Downey"), Genre = Book.Genres.Programming };
+            Book bookToAdd3 = new Book
+            {
+                Title = "Farmer Giles of Ham",
+                Author = new Author("J.R.R", "Tolkien"),
+                Genre = Book.Genres.Fiction
+            };
+
+            Book bookToAdd4 = new Book { Title = "Think Python1", Author = new Author("Allen", "Downey"), Genre = Book.Genres.Programming };
+            Book bookToAdd5 = new Book { Title = "Think Python2", Author = new Author("Allen", "Downey"), Genre = Book.Genres.Programming };
+            Book bookToAdd6 = new Book { Title = "Think Python3", Author = new Author("Allen", "Downey"), Genre = Book.Genres.Programming };
+
             library.Add(bookToAdd);
+            library.Add(bookToAdd2);
+            library.Add(bookToAdd3);
+            library.Add(bookToAdd4);
+            library.Add(bookToAdd5);
+            library.Add(bookToAdd6);
+
             Console.WriteLine("Phil returned a book to the library:\n");
             Console.WriteLine($"Title: {bookToAdd.Title}");
             Console.WriteLine($"Author: {bookToAdd.Author.FirstName} {bookToAdd.Author.LastName}");
@@ -99,9 +117,16 @@ namespace Lab07_LendingLibrary
             //////////////////////////////////////////////////
 
             //library.Remove(bookToAdd);
+            //library.Remove(bookToAdd2);
+            //library.Remove(bookToAdd3);
+            //library.Remove(bookToAdd4);
+            //library.Remove(bookToAdd5);
+            library.Remove(bookToAdd6);
+
             Console.WriteLine("");
             Console.WriteLine("Phil checked out this book from the library:");
-            Console.WriteLine($"Title: {bookToAdd.Title}\n");
+            Console.WriteLine(bookToAdd.Title);
+            Console.WriteLine("");
 
             Console.WriteLine($"Count of books in library: {library.Count()}\n");
             Console.WriteLine("");
@@ -116,10 +141,13 @@ namespace Lab07_LendingLibrary
 
             foreach (Book book in library)
             {
-                Console.WriteLine($"Title: {book.Title}");
-                Console.WriteLine($"Author: {book.Author.FirstName} {book.Author.LastName}");
-                Console.WriteLine($"Genre: {book.Genre}");
-                Console.WriteLine("");
+                if (book != null)
+                {
+                    Console.WriteLine($"Title: {book.Title}");
+                    Console.WriteLine($"Author: {book.Author.FirstName} {book.Author.LastName}");
+                    Console.WriteLine($"Genre: {book.Genre}");
+                    Console.WriteLine("");
+                }
             }
 
 
@@ -131,13 +159,16 @@ namespace Lab07_LendingLibrary
 
             foreach (Book book in library)
             {
-                if (book.Genre == Book.Genres.Fiction)
+                if (book != null)
                 {
-                    fictionBooks.Add(book);
-                }
-                else
-                {
-                    nonFictionBooks.Add(book);
+                    if (book.Genre == Book.Genres.Fiction)
+                    {
+                        fictionBooks.Add(book);
+                    }
+                    else
+                    {
+                        nonFictionBooks.Add(book);
+                    }
                 }
             }
 
