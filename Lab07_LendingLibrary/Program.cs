@@ -13,7 +13,7 @@ namespace Lab07_LendingLibrary
 
             Borrow();
 
-            Console.WriteLine("");
+            Console.ReadLine();
         }
 
         /// <summary>
@@ -21,60 +21,60 @@ namespace Lab07_LendingLibrary
         /// </summary>
         public static void Borrow()
         {
-            // Instantiate custom collection
-            Library<Book> library = new Library<Book>
-            {
-                new Book {
-                    Title = "C# 7.0 in a Nutshell",
-                    Author = new Author("Joseph", "Albahari"),
-                    Genre = Book.Genres.Programming
-                },
-                new Book {
-                    Title = "Think Python",
-                    Author = new Author("Allen", "Downey"),
-                    Genre = Book.Genres.Programming
-                },
-                new Book {
-                    Title = "The Lord of the Rings",
-                    Author = new Author("J.R.R", "Tolkien"),
-                    Genre = Book.Genres.Fiction
-                },
-                new Book {
-                    Title = "Farmer Giles of Ham",
-                    Author = new Author("J.R.R", "Tolkien"),
-                    Genre = Book.Genres.Fiction
-                },
-                new Book {
-                    Title = "Roverandom",
-                    Author = new Author("J.R.R", "Tolkien"),
-                    Genre = Book.Genres.Fiction
-                },
-                new Book {
-                    Title = "Leaf by Niggle",
-                    Author = new Author("J.R.R", "Tolkien"),
-                    Genre = Book.Genres.Fiction
-                },
-                new Book {
-                    Title = "Moby Dick",
-                    Author = new Author("Daniel", "Defoe"),
-                    Genre = Book.Genres.Fiction
-                },
-                new Book {
-                    Title = "The Hobbit",
-                    Author = new Author("J.R.R", "Tolkien"),
-                    Genre = Book.Genres.Fiction
-                },
-                new Book {
-                    Title = "The Book of Lost Tales",
-                    Author = new Author("J.R.R", "Tolkien"),
-                    Genre = Book.Genres.History
-                },
-                new Book {
-                    Title = "The Adventures of Tom Bombadil",
-                    Author = new Author("J.R.R", "Tolkien"),
-                    Genre = Book.Genres.Fiction
-                },
-            };
+            // Instantiate custom generic collection
+            Library<Book> library = new Library<Book>();
+            //{
+            //    new Book {
+            //        Title = "C# 7.0 in a Nutshell",
+            //        Author = new Author("Joseph", "Albahari"),
+            //        Genre = Book.Genres.Programming
+            //    },
+            //    new Book {
+            //        Title = "Think Python",
+            //        Author = new Author("Allen", "Downey"),
+            //        Genre = Book.Genres.Programming
+            //    },
+                //new Book {
+                //    Title = "The Lord of the Rings",
+                //    Author = new Author("J.R.R", "Tolkien"),
+                //    Genre = Book.Genres.Fiction
+                //},
+                //new Book {
+                //    Title = "Farmer Giles of Ham",
+                //    Author = new Author("J.R.R", "Tolkien"),
+                //    Genre = Book.Genres.Fiction
+                //},
+                //new Book {
+                //    Title = "Roverandom",
+                //    Author = new Author("J.R.R", "Tolkien"),
+                //    Genre = Book.Genres.Fiction
+                //},
+                //new Book {
+                //    Title = "Leaf by Niggle",
+                //    Author = new Author("J.R.R", "Tolkien"),
+                //    Genre = Book.Genres.Fiction
+                //},
+                //new Book {
+                //    Title = "Moby Dick",
+                //    Author = new Author("Daniel", "Defoe"),
+                //    Genre = Book.Genres.Fiction
+                //},
+                //new Book {
+                //    Title = "The Hobbit",
+                //    Author = new Author("J.R.R", "Tolkien"),
+                //    Genre = Book.Genres.Fiction
+                //},
+                //new Book {
+                //    Title = "The Book of Lost Tales",
+                //    Author = new Author("J.R.R", "Tolkien"),
+                //    Genre = Book.Genres.History
+                //},
+                //new Book {
+                //    Title = "The Adventures of Tom Bombadil",
+                //    Author = new Author("J.R.R", "Tolkien"),
+                //    Genre = Book.Genres.Fiction
+                //},
+            //};
 
             // Print count of books currently in library
             Console.WriteLine($"Count of books in library: {library.Count()}\n");
@@ -84,53 +84,67 @@ namespace Lab07_LendingLibrary
             // Add new book to library
             //////////////////////////////////////////////////
 
-            Book bookToAdd = new Book { Title = "C# 7.0 in a Nutshell", Author = new Author("Joseph", "Albahari"), Genre = Book.Genres.Programming };
+            // Instantiate new books and store in variables
+            Book bookToAdd1 = new Book { Title = "C# 7.0 in a Nutshell", Author = new Author("Joseph", "Albahari"), Genre = Book.Genres.Programming };
             Book bookToAdd2 = new Book { Title = "Think Python", Author = new Author("Allen", "Downey"), Genre = Book.Genres.Programming };
-            Book bookToAdd3 = new Book
-            {
-                Title = "Farmer Giles of Ham",
-                Author = new Author("J.R.R", "Tolkien"),
-                Genre = Book.Genres.Fiction
-            };
+            Book bookToAdd3 = new Book { Title = "Farmer Giles of Ham", Author = new Author("J.R.R", "Tolkien"), Genre = Book.Genres.Fiction };
+            Book bookToAdd4 = new Book { Title = "The Lord of the Rings", Author = new Author("J.R.R", "Tolkien"), Genre = Book.Genres.Fiction };
+            Book bookToAdd5 = new Book { Title = "Roverandom", Author = new Author("J.R.R", "Tolkien"), Genre = Book.Genres.Fiction };
+            Book bookToAdd6 = new Book { Title = "Leaf by Niggle", Author = new Author("J.R.R", "Tolkien"), Genre = Book.Genres.Fiction };
+            Book bookToAdd7 = new Book { Title = "Moby Dick", Author = new Author("Daniel", "Defoe"), Genre = Book.Genres.Fiction };
+            Book bookToAdd8 = new Book { Title = "The Hobbit", Author = new Author("J.R.R", "Tolkien"), Genre = Book.Genres.Fiction };
+            Book bookToAdd9 = new Book { Title = "The Book of Lost Tales", Author = new Author("J.R.R", "Tolkien"), Genre = Book.Genres.History };
+            Book bookToAdd10 = new Book { Title = "The Adventures of Tom Bombadil", Author = new Author("J.R.R", "Tolkien"), Genre = Book.Genres.Fiction };
+            Book bookToAdd11 = new Book { Title = "Design Patters", Author = new Author("Erich", "Gamma"), Genre = Book.Genres.Programming };
+            Book bookToAdd12 = new Book { Title = "Cracking the Coding Interview", Author = new Author("Gayle", "Laakmann McDowell"), Genre = Book.Genres.Programming };
+            Book bookToAdd13 = new Book { Title = "Team of Teams", Author = new Author("Stanley", "McCrystal"), Genre = Book.Genres.History };
+            Book bookToAdd14 = new Book { Title = "The Imposter's Handbook", Author = new Author("Rob", "Conery"), Genre = Book.Genres.Programming };
+            Book bookToAdd15 = new Book { Title = "The Imposter's Handbook: Season 2", Author = new Author("Rob", "Conery"), Genre = Book.Genres.Programming };
+            Book bookToAdd16 = new Book { Title = "Code", Author = new Author("Charles", "Petzold"), Genre = Book.Genres.Programming };
 
-            Book bookToAdd4 = new Book { Title = "Think Python1", Author = new Author("Allen", "Downey"), Genre = Book.Genres.Programming };
-            Book bookToAdd5 = new Book { Title = "Think Python2", Author = new Author("Allen", "Downey"), Genre = Book.Genres.Programming };
-            Book bookToAdd6 = new Book { Title = "Think Python3", Author = new Author("Allen", "Downey"), Genre = Book.Genres.Programming };
+            // Add a book to library collection
+            library.Add(bookToAdd1);
 
-            library.Add(bookToAdd);
+            Console.WriteLine("This book has been returned to the library:\n");
+            Console.WriteLine($"Title: {bookToAdd1.Title}");
+            Console.WriteLine($"Author: {bookToAdd1.Author.FirstName} {bookToAdd1.Author.LastName}");
+            Console.WriteLine($"Genre: {bookToAdd1.Genre}\n");
+
+            // Add more books to library
             library.Add(bookToAdd2);
             library.Add(bookToAdd3);
             library.Add(bookToAdd4);
             library.Add(bookToAdd5);
             library.Add(bookToAdd6);
-
-            Console.WriteLine("Phil returned a book to the library:\n");
-            Console.WriteLine($"Title: {bookToAdd.Title}");
-            Console.WriteLine($"Author: {bookToAdd.Author.FirstName} {bookToAdd.Author.LastName}");
-            Console.WriteLine($"Genre: {bookToAdd.Genre}\n");
-
-            Console.WriteLine($"Count of books in library: {library.Count()}\n");
-
+            library.Add(bookToAdd7);
+            library.Add(bookToAdd8);
+            library.Add(bookToAdd9);
+            library.Add(bookToAdd10);
+            library.Add(bookToAdd11);
+            library.Add(bookToAdd12);
+            library.Add(bookToAdd13);
+            library.Add(bookToAdd14);
+            library.Add(bookToAdd15);
+            library.Add(bookToAdd16);
+            
 
             //////////////////////////////////////////////////
             // Remove book from library
             //////////////////////////////////////////////////
 
-            //library.Remove(bookToAdd);
-            //library.Remove(bookToAdd2);
-            //library.Remove(bookToAdd3);
-            //library.Remove(bookToAdd4);
-            //library.Remove(bookToAdd5);
-            library.Remove(bookToAdd6);
+            // Remove some books from library
+            library.Remove(bookToAdd1);
 
-            Console.WriteLine("");
-            Console.WriteLine("Phil checked out this book from the library:");
-            Console.WriteLine(bookToAdd.Title);
-            Console.WriteLine("");
-
-            Console.WriteLine($"Count of books in library: {library.Count()}\n");
-            Console.WriteLine("");
-
+            Console.WriteLine("This book has been checked out from the library:");
+            Console.WriteLine(bookToAdd1.Title);
+            Console.WriteLine($"Author: {bookToAdd1.Author.FirstName} {bookToAdd1.Author.LastName}");
+            Console.WriteLine($"Genre: {bookToAdd1.Genre}\n"); 
+            
+            // Remove more books from library
+            library.Remove(bookToAdd11);
+            library.Remove(bookToAdd12);
+            library.Remove(bookToAdd13);
+            
 
             //////////////////////////////////////////////////
             // Print all books in library
@@ -145,8 +159,7 @@ namespace Lab07_LendingLibrary
                 {
                     Console.WriteLine($"Title: {book.Title}");
                     Console.WriteLine($"Author: {book.Author.FirstName} {book.Author.LastName}");
-                    Console.WriteLine($"Genre: {book.Genre}");
-                    Console.WriteLine("");
+                    Console.WriteLine($"Genre: {book.Genre}\n");
                 }
             }
 
@@ -197,8 +210,6 @@ namespace Lab07_LendingLibrary
                 Console.WriteLine($"Genre: {book.Genre}");
                 Console.WriteLine("");
             }
-
-
         }
     }
 }

@@ -12,7 +12,10 @@ namespace Lab07_LendingLibrary.Classes
     /// <typeparam name="T">Book type</typeparam>
     public class Library<T> : IEnumerable
     {
+        // Create array and set initial length
         T[] books = new T[10];
+
+        // Global variable for tracking count of books in library
         int count = 0;
 
         /// <summary>
@@ -28,39 +31,56 @@ namespace Lab07_LendingLibrary.Classes
 
             // Updates books collection at next index
             books[count++] = book;
+
+            Console.WriteLine($"New book added to library. Number of books in library is now {count}.");
+            Console.WriteLine($"Length of books array is now {books.Length}.\n");
         }
 
         /// <summary>
         /// Removes a Book object from Library collection
         /// </summary>
-        /// <param name="book">Book object</param>
-        public void Remove(T book)
+        /// <param name="bookToRemove">Book object</param>
+        public void Remove(T bookToRemove)
         {
-            //TODO Add if stmt so count decrements only if the book to remove actually exists in the library
-
-
-            T[] temp = new T[books.Length];
-
-            // Determine size of temp array and if it need resizing
-            if (count < (books.Length - books.Length / 2))
+            if (count > 0)
             {
-                Array.Resize(ref books, books.Length - (books.Length / 2));
-            }
+                // Initialize temp array with same length as books array
+                T[] temp = new T[books.Length];
 
-            // Load temp array with items that don't need to be removed
-            for (int i = 0; i < books.Length; i++)
-            {
-                if ( !(books[i] == null) )
+                // Set threshold for reducing length of temp array
+                if (count < books.Length / 2)
                 {
-                    if ( !books[i].Equals(book) )
+                    Array.Resize(ref books, books.Length / 2);
+                }
+                
+                // Used below for setting index in temp array
+                int loopCounter = 0;
+
+                // Load temp array with items that don't need to be removed
+                for (int i = 0; i < books.Length; i++)
+                {
+                    if (!(books[i] == null))
                     {
-                        // Add to temp array
-                        temp[i] = books[i];
+                        if (!books[i].Equals(bookToRemove))
+                        {
+                            // Add book to temp array
+                            temp[loopCounter] = books[i];
+
+                            // Loop counter increments *only* when books[i] doesn't equal book to remove
+                            loopCounter++;
+                        }
                     }
                 }
+                count--;
+                books = temp;
+                
+                Console.WriteLine($"Book removed from library. Number of books in library is now {count}.");
+                Console.WriteLine($"Length of books array is now {books.Length}.\n");
             }
-            count--;
-            books = temp;
+            else
+            {
+                Console.WriteLine("Oops, there were no books to remove!\nYou can only remove a book if there are one or more books in the library!\n");
+            }
         }
 
         /// <summary>
